@@ -22,7 +22,7 @@ flags.DEFINE_string(
 
 # 评估参数
 flags.DEFINE_integer('batch_size', 64, 'Batch Size (default: 64)')
-flags.DEFINE_string('checkpoint_dir', './runs/1538900151/checkpoints',
+flags.DEFINE_string('checkpoint_dir', './runs/1538901633/checkpoints',
                     'Checkpoint directory from training run')
 flags.DEFINE_boolean('eval_train', False, 'Evaluate on all training data')
 
@@ -46,9 +46,10 @@ if FLAGS.eval_train:
 else:
     x_raw = [
         '亲爱的CFer，您获得了英雄级道具。还有全新英雄级道具在等你来拿，立即登录游戏领取吧！',
-        '第一个build错误的解决方法能再说一下吗，我还是不懂怎么解决', '请联系张经理获取最新资讯'
+        '第一个build错误的解决方法能再说一下吗，我还是不懂怎么解决', '请联系张经理获取最新资讯',
+        '威@信+約ō泡加v:','朋友）您好，上期开的（27）猴，您肿了吗？+美女徽：86472186 勉費领明天的消息'
     ]
-    y_test = [0, 1, 0]
+    y_test = [1, 0, 1, 1, 1]
 
 # 对自己的数据的处理
 x_raw_cleaned = [
