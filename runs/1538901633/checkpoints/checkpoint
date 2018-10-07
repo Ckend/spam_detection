@@ -1,0 +1,6 @@
+model_checkpoint_path: "/Users/ckend/Documents/GitHub/spam_detection/runs/1538901633/checkpoints/model-600"
+all_model_checkpoint_paths: "/Users/ckend/Documents/GitHub/spam_detection/runs/1538901633/checkpoints/model-200"
+all_model_checkpoint_paths: "/Users/ckend/Documents/GitHub/spam_detection/runs/1538901633/checkpoints/model-300"
+all_model_checkpoint_paths: "/Users/ckend/Documents/GitHub/spam_detection/runs/1538901633/checkpoints/model-400"
+all_model_checkpoint_paths: "/Users/ckend/Documents/GitHub/spam_detection/runs/1538901633/checkpoints/model-500"
+all_model_checkpoint_paths: "/Users/ckend/Documents/GitHub/spam_detection/runs/1538901633/checkpoints/model-600"
