@@ -1,4 +1,4 @@
-# 基于CNN的垃圾信息自动识别
+# 基于CNN的垃圾信息自动识别
 
 各目录及文件作用：
 
@@ -13,7 +13,7 @@
 ## 使用
 
 1. 进入 train.py 并适宜调整参数进行训练，结果会被保存在run中
-2. 进入 eval.py ，适当调整测试信息(如checkpoint_dir、x_raw等)，进行模型测试
+2. 进入 eval.py ，适当调整测试信息(如checkpoint_dir、x_raw等)，进行模型测试
 
 训练四百次时的准确率：
 
@@ -60,7 +60,7 @@
     2018-10-07T16:09:52.954479: step 400, loss 0.0463378, acc 0.96875
 
 
-## 参考
+## 参考
 
     1.Implementing a CNN for Text Classification in TensorFlow:
     http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow
