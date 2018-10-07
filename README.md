@@ -3,9 +3,9 @@
 各目录及文件作用：
 
     data: 存放训练数据及文本处理后的数据
-    runs: 存放训练结果
+    runs: 存放训练结果
     data_helpers.py: 处理训练数据
-    text_cnn.py: 定义CNN类
+    text_cnn.py: 定义CNN类
     train.py: 训练模型
     eval.py: 测试模型
 
