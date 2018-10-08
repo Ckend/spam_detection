@@ -19,12 +19,14 @@ flags.DEFINE_string(
     'data_files',
     './data/normal.txt,./data/unnormal.txt',
     'Comma-separated data source files')
+flags.DEFINE_float('dev_sample_percentage', 0.001,
+                   'Percentage of the training data to use for validation')
 
 # 评估参数
 flags.DEFINE_integer('batch_size', 64, 'Batch Size (default: 64)')
 flags.DEFINE_string('checkpoint_dir', './runs/1538901633/checkpoints',
                     'Checkpoint directory from training run')
-flags.DEFINE_boolean('eval_train', False, 'Evaluate on all training data')
+flags.DEFINE_boolean('eval_train', True, 'Evaluate on all dev data')
 
 # 其他参数
 flags.DEFINE_boolean('allow_soft_placement', True,
@@ -41,7 +43,13 @@ print('')
 
 # 加载训练数据或者修改测试句子
 if FLAGS.eval_train:
+    # 最多启用后八万条
     x_raw, y_test = data_helpers.load_data_and_labels(FLAGS.data_files)
+    dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y_test)))
+
+    x_raw = x_raw[-1000:]
+    y_test = y_test[-1000:]
+
     y_test = np.argmax(y_test, axis=1)
 else:
     x_raw = [
@@ -55,7 +63,7 @@ else:
 x_raw_cleaned = [
     data_helpers.clean_str(data_helpers.seperate_line(line)) for line in x_raw
 ]
-print(x_raw_cleaned)
+# print(x_raw_cleaned)
 
 # 将数据转为词汇表的索引
 vocab_path = os.path.join(FLAGS.checkpoint_dir, '..', 'vocab')
