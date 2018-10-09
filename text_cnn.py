@@ -72,7 +72,7 @@ class TextCNN():
                 pooled_outputs.append(pooled)
 
         # 组合所有池化后的特征
-        # 将三个过滤器得到的特征向量组合成一个384维的特征向量
+        # 将过滤器得到的特征向量组合成一个384维的特征向量
         num_filters_total = num_filters * len(filter_sizes)
         with tf.name_scope('concat'):
             self.h_pool = tf.concat(pooled_outputs, 3)
